@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Minesweeper</title>
+  </head>
+  <body onload="initGame()">
+    <div class="container">
+      <div class="logo"><img src="img/logo.png" alt="" /></div>
+
+      <div class="features">
+        <h3 class="high-score">BEST SCORE : <span>999s</span></h3>
+        <div class="lives-container">
+          <h3 class="lives-title">LIVES :</h3>
+          <h3 class="lives">♥ <span>3</span></h3>
+        </div>
+      </div>
+
+      <div class="hints">
+        <h3>HINTS :</h3>
+        <button onclick="getHint(this)"><img src="img/lightOff.png" alt="" /></button>
+        <button onclick="getHint(this)"><img src="img/lightOff.png" alt="" /></button>
+        <button onclick="getHint(this)"><img src="img/lightOff.png" alt="" /></button>
+      </div>
+
+      <div class="difficulties">
+        <button class="level" onclick="setDifficult(this)">Easy</button>
+        <button class="level" onclick="setDifficult(this)">Medium</button>
+        <button class="level" onclick="setDifficult(this)">Hard</button>
+      </div>
+
+      <h3 class="flags"><img src="img/flag.png" /><span></span></h3>
+
+      <button class="emoji" onclick="resetGame()">😀</button>
+
+      <h1 class="timer">000</h1>
+
+      <div class="board-container"></div>
+
+      <div class="safe-click">
+        <button class="safe-btn" onclick="safeClick(this)">Safe Click</button>
+        <h6><span>3</span> clicks available</h6>
+      </div>
+    </div>
+
+    <script src="js/utils.js"></script>
+    <script src="js/game.js"></script>
+  </body>
+</html>
