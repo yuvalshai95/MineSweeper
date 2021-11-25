@@ -10,7 +10,7 @@ body {
 
 .logo img {
   width: 280px;
-  margin: 10px 0 20px;
+  margin: 10px 0 15px;
 }
 
 .timer {
@@ -30,7 +30,7 @@ body {
 
 .lives-title {
   display: inline-block;
-  font-size: 30px;
+  font-size: 22px;
   margin: 0;
   font-family: 'Archivo Black', sans-serif;
   letter-spacing: 5px;
@@ -40,14 +40,14 @@ body {
 
 .lives {
   display: inline-block;
-  font-size: 35px;
+  font-size: 30px;
   color: red;
   margin: 0;
 }
 
 .lives span {
   color: #436872;
-  font-size: 30px;
+  font-size: 25px;
 }
 
 .flags {
@@ -75,7 +75,7 @@ body {
 
 .hints h3 {
   display: inline-block;
-  font-size: 30px;
+  font-size: 22px;
   margin: 0;
   font-family: 'Archivo Black', sans-serif;
   letter-spacing: 5px;
@@ -92,7 +92,7 @@ body {
 }
 
 .high-score {
-  font-size: 30px;
+  font-size: 22px;
   margin: 0;
   font-family: 'Archivo Black', sans-serif;
   letter-spacing: 5px;
@@ -118,7 +118,6 @@ body {
 
 .board-container table {
   background-color: lightgray;
-
   margin: auto;
   margin-top: 10px;
   text-align: center;
@@ -204,7 +203,6 @@ td.cell:hover {
   color: lightgray;
 }
 
-/* Safe Click btn */
 h6 {
   margin: 5px;
   font-family: 'JetBrains Mono', monospace;
@@ -219,11 +217,9 @@ h6 {
 .hints button {
   background: none;
   align-items: center;
-  appearance: none;
   border-radius: 4px;
   border-width: 0;
   box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #9fb8b9 0 -3px 0 inset;
-  box-sizing: border-box;
   color: white;
   cursor: pointer;
   display: inline-flex;
@@ -231,20 +227,9 @@ h6 {
   height: 50px;
   width: 40px;
   justify-content: center;
-  line-height: 1;
-  list-style: none;
-  overflow: hidden;
   padding-left: 16px;
   padding-right: 16px;
-  position: relative;
-  text-align: left;
-  text-decoration: none;
   transition: box-shadow 0.15s, transform 0.15s;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  white-space: nowrap;
-  will-change: box-shadow, transform;
   font-size: 18px;
 }
 
@@ -263,10 +248,8 @@ h6 {
   transform: translateY(2px);
 }
 
-/* Safe click btn */
+/* Safe Click btn */
 .safe-btn {
-  align-items: center;
-  appearance: none;
   background-color: #5f898a;
   border-radius: 4px;
   border-width: 0;
@@ -274,24 +257,11 @@ h6 {
   box-sizing: border-box;
   color: white;
   cursor: pointer;
-  display: inline-flex;
   font-family: 'JetBrains Mono', monospace;
   height: 48px;
-  justify-content: center;
-  line-height: 1;
-  list-style: none;
-  overflow: hidden;
   padding-left: 16px;
   padding-right: 16px;
-  position: relative;
-  text-align: left;
-  text-decoration: none;
   transition: box-shadow 0.15s, transform 0.15s;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  white-space: nowrap;
-  will-change: box-shadow, transform;
   font-size: 18px;
 }
 
@@ -312,35 +282,24 @@ h6 {
 
 /* Levels CSS */
 .difficulties .level {
-  align-self: center;
   background-color: #83ab9f;
-
-  background-image: none;
-  background-position: 0 90%;
-  background-repeat: repeat no-repeat;
   background-size: 4px 3px;
-  border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
+  border-radius: 15px 225px 255px 15px;
   border-style: solid;
   border-width: 2px;
   box-shadow: rgba(0, 0, 0, 0.2) 15px 28px 25px -18px;
-  box-sizing: border-box;
   color: white;
   cursor: pointer;
   display: inline-block;
   font-family: Neucha, sans-serif;
   font-size: 1rem;
   line-height: 23px;
-  outline: none;
   padding: 0.75rem;
-  text-decoration: none;
   transition: all 235ms ease-in-out;
   border-bottom-left-radius: 15px 255px;
   border-bottom-right-radius: 225px 15px;
   border-top-left-radius: 255px 15px;
   border-top-right-radius: 15px 225px;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
 }
 
 .difficulties .level:hover {
