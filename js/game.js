@@ -1,7 +1,7 @@
 'use strict';
 
 // Disable menu popping on mouse right click
-document.addEventListener('contextmenu', (event) => event.preventDefault());
+// document.addEventListener('contextmenu', (event) => event.preventDefault());
 
 //Const
 const FLAG = '🚩';
@@ -114,7 +114,7 @@ function renderBoard(board) {
       }
 
       strHTML += `<td class="${className}"
-      oncontextmenu="cellMarked(${i},${j})"
+      oncontextmenu="cellMarked(event,${i},${j})"
       onclick="cellClicked(${i},${j})">${currentCell}</td>`;
     }
     strHTML += '</tr>';
@@ -149,8 +149,6 @@ function cellClicked(i, j) {
         if (currCell.minesAroundCount === 0) {
           // Expend cells
           expandShown({ i, j });
-          currCell.isShown = true;
-          gGame.shownCount++;
         } else {
           // show cell -> number with mines around it
           // Update model
@@ -196,7 +194,8 @@ function cellClicked(i, j) {
   }
 }
 
-function cellMarked(i, j) {
+function cellMarked(ev, i, j) {
+  ev.preventDefault(); // Cancel Menu popping on mouse right click
   if (!gIsGameFinished) {
     if (!gGame.isOn) {
       gGame.isOn = true;
@@ -328,6 +327,28 @@ function showAllMines() {
   }
 }
 
+// function expandShown(location) {
+//   // Iterate from row above and next row
+//   for (var i = location.i - 1; i <= location.i + 1; i++) {
+//     // Checking to see if we are at  the edge of the board
+//     if (i < 0 || i > gLevel.size - 1) continue;
+
+//     // Iterate from left col to right col
+//     for (var j = location.j - 1; j <= location.j + 1; j++) {
+//       // Checking to see if we are at the edge of the board
+//       if (j < 0 || j > gLevel.size - 1) continue;
+
+//       // dont check the current position(only neighbors)
+//       if (i === location.i && j === location.j) continue;
+
+//       if (!gBoard[i][j].isMine && !gBoard[i][j].isMarked && !gBoard[i][j].isShown) {
+//         gBoard[i][j].isShown = true;
+//         gGame.shownCount++;
+//       }
+//     }
+//   }
+// }
+
 function expandShown(location) {
   // Iterate from row above and next row
   for (var i = location.i - 1; i <= location.i + 1; i++) {
@@ -339,12 +360,16 @@ function expandShown(location) {
       // Checking to see if we are at the edge of the board
       if (j < 0 || j > gLevel.size - 1) continue;
 
-      // dont check the current position(only neighbors)
-      if (i === location.i && j === location.j) continue;
-
       if (!gBoard[i][j].isMine && !gBoard[i][j].isMarked && !gBoard[i][j].isShown) {
-        gBoard[i][j].isShown = true;
-        gGame.shownCount++;
+        // Empty Cell check cell negs with recursion
+        if (gBoard[i][j].minesAroundCount === 0) {
+          gBoard[i][j].isShown = true;
+          gGame.shownCount++;
+          expandShown({ i, j });
+        } else {
+          gBoard[i][j].isShown = true;
+          gGame.shownCount++;
+        }
       }
     }
   }
