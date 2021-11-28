@@ -327,28 +327,6 @@ function showAllMines() {
   }
 }
 
-// function expandShown(location) {
-//   // Iterate from row above and next row
-//   for (var i = location.i - 1; i <= location.i + 1; i++) {
-//     // Checking to see if we are at  the edge of the board
-//     if (i < 0 || i > gLevel.size - 1) continue;
-
-//     // Iterate from left col to right col
-//     for (var j = location.j - 1; j <= location.j + 1; j++) {
-//       // Checking to see if we are at the edge of the board
-//       if (j < 0 || j > gLevel.size - 1) continue;
-
-//       // dont check the current position(only neighbors)
-//       if (i === location.i && j === location.j) continue;
-
-//       if (!gBoard[i][j].isMine && !gBoard[i][j].isMarked && !gBoard[i][j].isShown) {
-//         gBoard[i][j].isShown = true;
-//         gGame.shownCount++;
-//       }
-//     }
-//   }
-// }
-
 function expandShown(location) {
   // Iterate from row above and next row
   for (var i = location.i - 1; i <= location.i + 1; i++) {
